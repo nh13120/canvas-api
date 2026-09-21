@@ -1,0 +1,24 @@
+# Secrets — never commit
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store
+
+# Downloaded course material — don't commit (large, and licensed)
+downloads/
+seen_files.json
+ledger.json
+
+# Personal output of the agent — never commit
+briefs/
+docs/
+logs/

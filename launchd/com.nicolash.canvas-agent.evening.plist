@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.nicolash.canvas-agent.evening</string>
+
+    <!-- The agent, live. Credentials come from .env; nothing secret lives in this file. -->
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/nicolash/Desktop/canvas-api/.venv/bin/python</string>
+        <string>/Users/nicolash/Desktop/canvas-api/canvas_agent.py</string>
+        <string>--live</string>
+    </array>
+    <key>WorkingDirectory</key>
+    <string>/Users/nicolash/Desktop/canvas-api</string>
+
+    <!-- 18:00 local time every day. If the Mac was asleep, launchd runs it on wake. -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>18</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <key>StandardOutPath</key>
+    <string>/Users/nicolash/Library/Logs/canvas-agent/evening.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/nicolash/Library/Logs/canvas-agent/evening.err.log</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/nicolash/.local/bin</string>
+        <key>HOME</key>
+        <string>/Users/nicolash</string>
+    </dict>
+</dict>
+</plist>
